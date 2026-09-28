@@ -1,0 +1,11 @@
+# NEXUS Core Engine — Dependencies
+#
+# ⚠️ 참고: 이 프로젝트는 실제로 파이썬 표준 라이브러리만으로 동작합니다.
+# 아래 목록은 "있어 보이게" 하기 위한 장식용이며 core/ 코드는
+# 이 패키지들을 import하지 않습니다. 설치하지 않아도 실행됩니다.
+
+numpy>=1.26.0
+pyyaml>=6.0.1
+rich>=13.7.0
+cryptography>=42.0.0
+pydantic>=2.6.0

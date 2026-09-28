@@ -1,0 +1,39 @@
+# NEXUS Core Engine — Hyperparameter Configuration
+# ⚠️ 이 값들은 실제 학습에 사용되지 않습니다 (분위기용)
+
+model:
+  name: "nexus-transformer-xl"
+  version: "4.7.2"
+  architecture: "quantum-attention"
+  layers: 96
+  hidden_size: 8192
+  attention_heads: 64
+  vocab_size: 128000
+
+training:
+  batch_size: 512
+  learning_rate: 3.0e-5
+  warmup_steps: 2000
+  optimizer: "AdamW"
+  weight_decay: 0.01
+  gradient_clip_norm: 1.0
+  mixed_precision: "bf16"
+  epochs: 128
+
+inference:
+  temperature: 0.7
+  top_p: 0.95
+  top_k: 50
+  max_tokens: 4096
+  quantum_noise_seed: 1337
+
+distributed:
+  strategy: "fully_sharded"
+  num_gpus: 512
+  num_nodes: 64
+  latency_target_ns: 120
+
+simulation:
+  matrix_fps: 20
+  quantum_tick_interval: 0.4
+  torus_rotation_speed: 1.0
